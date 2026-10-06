@@ -5,6 +5,8 @@ import Reveal from './deck/Reveal';
 import Cover from './components/Cover';
 import Agenda from './components/Agenda';
 
+const BASE = import.meta.env.BASE_URL;
+
 const card: React.CSSProperties = {
   padding: '20px',
   borderRadius: 'var(--radius)',
@@ -195,7 +197,7 @@ export default function App() {
           {/* Card 1: Input */}
           <div style={card}>
             <div style={{ position: 'relative', borderRadius: '10px', overflow: 'hidden', marginBottom: 10, border: '1px solid var(--hair)' }}>
-              <img src="/images/shopee_input.jpg" alt="Checkout Input" style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }} />
+              <img src={`${BASE}images/shopee_input.jpg`} alt="Checkout Input" style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }} />
               <span style={{ position: 'absolute', top: 6, left: 6, background: '#ee4d2d', color: '#fff', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 4 }}>
                 1. INPUT
               </span>
@@ -209,7 +211,7 @@ export default function App() {
           {/* Card 2: Process */}
           <div style={card}>
             <div style={{ position: 'relative', borderRadius: '10px', overflow: 'hidden', marginBottom: 10, border: '1px solid var(--hair)' }}>
-              <img src="/images/shopee_process.jpg" alt="Garansi Shopee Process" style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }} />
+              <img src={`${BASE}images/shopee_process.jpg`} alt="Garansi Shopee Process" style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }} />
               <span style={{ position: 'absolute', top: 6, left: 6, background: '#0284c7', color: '#fff', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 4 }}>
                 2. PROSES
               </span>
@@ -223,7 +225,7 @@ export default function App() {
           {/* Card 3: Output */}
           <div style={card}>
             <div style={{ position: 'relative', borderRadius: '10px', overflow: 'hidden', marginBottom: 10, border: '1px solid var(--hair)' }}>
-              <img src="/images/shopee_output.jpg" alt="Tracking Output" style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }} />
+              <img src={`${BASE}images/shopee_output.jpg`} alt="Tracking Output" style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }} />
               <span style={{ position: 'absolute', top: 6, left: 6, background: '#059669', color: '#fff', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 4 }}>
                 3. OUTPUT
               </span>
@@ -657,7 +659,7 @@ export default function App() {
           }}
         >
           <video
-            src="/video.mp4"
+            src={`${BASE}video.mp4`}
             controls
             autoPlay
             style={{
