@@ -81,15 +81,16 @@ export default function App() {
           ───────────────────────────────────────────────────────────── */}
       <Agenda
         nav="Agenda"
-        notes="Seluruh materi tugas ini telah saya sesuaikan ke dalam format matriks tabel analisis: Dimulai dari Tabel Analisis IPO lintas 4 pilar ekosistem, dilanjutkan Tabel Analisis 6 Prinsip Perancangan SI sesuai materi kuliah, Tabel Klasifikasi Taksonomi SI, dan ditutup dengan Tabel Evaluasi Kritis Kelebihan, Kelemahan, serta Rekomendasi Solusinya."
+        notes="Seluruh materi tugas ini telah saya sesuaikan ke dalam format matriks tabel analisis: Dimulai dari Tabel Analisis IPO lintas 4 pilar ekosistem, Landasan Teori Enam Komponen SI dari perkuliahan, dilanjutkan Tabel Analisis 6 Prinsip Perancangan SI sesuai materi kuliah, Tabel Klasifikasi Taksonomi SI, dan ditutup dengan Tabel Evaluasi Kritis Kelebihan, Kelemahan, serta Rekomendasi Solusinya."
         kicker="Struktur Tugas (Format Tabel Analisis)"
         title="Daftar Tabel Analisis Pembahasan"
         items={[
           { title: 'Tabel 1: Analisis Model Input – Proses – Output (IPO)', hint: '4 Pilar Ekosistem Shopee' },
+          { title: 'Landasan Teori: Enam Komponen Sistem Informasi', hint: 'Slide Perkuliahan & Implementasi Shopee' },
           { title: 'Tabel 2: Analisis 6 Prinsip Perancangan Sistem Informasi', hint: 'Sesuai Slide Teori Perkuliahan' },
           { title: 'Tabel 3: Analisis Klasifikasi Jenis Sistem Informasi', hint: 'TPS, MIS, DSS, & IOS Beserta Alasannya' },
           { title: 'Tabel 4: Analisis Evaluasi Perancangan Sistem', hint: 'Kelebihan, Bloatware, & Solusi Rekayasa SI' },
-          { title: 'Validasi Faktual & Sesi Diskusi Tanya Jawab (Q&A)', hint: 'Rujukan Resmi & Diskusi' },
+          { title: 'Validasi Faktual & Media Demonstrasi (Q&A)', hint: 'Rujukan Resmi, Video, & Diskusi' },
         ]}
       />
 
@@ -239,7 +240,194 @@ export default function App() {
       </Slide>
 
       {/* ─────────────────────────────────────────────────────────────
-          SLIDE 5: TABEL 2 (A) - 6 PRINSIP PERANCANGAN SI (PRINSIP 1 - 3)
+          SLIDE 5: ENAM KOMPONEN SISTEM INFORMASI (DOKUMENTASI KULIAH & SHOPEE)
+          ───────────────────────────────────────────────────────────── */}
+      <Slide
+        nav="6 Komponen SI Shopee"
+        notes="Pada slide ini, teori perkuliahan mengenai Enam Komponen Sistem Informasi kita bedah langsung secara spesifik pada arsitektur ekosistem Shopee. Pertama, Perangkat Keras: mencakup server cloud AWS/Tencent, smartphone pengguna, hingga scanner barcode kurir SPX di gudang sortir. Kedua, Perangkat Lunak: aplikasi Shopee, microservices Go/Java, database TiDB, dan caching Redis. Ketiga, Data: katalog SKU, order escrow, titik GPS, dan histori kredit SPayLater. Keempat, Jaringan: internet 4G/5G, CDN Cloudflare, dan API Gateway perbankan. Kelima, Prosedur: SOP Garansi Shopee dan SLA pengiriman. Serta keenam, Manusia: pembeli, penjual, kurir, hingga engineer. Sesuai catatan dosen: secanggih apa pun SI Shopee, keberhasilannya ditentukan oleh manusianya."
+      >
+        <Reveal>
+          <div className="kicker" style={{ marginBottom: 6, textAlign: 'center' }}>
+            Tabel Analisis Komponen SI · Ekosistem Shopee
+          </div>
+          <h2
+            className="headline"
+            style={{
+              textAlign: 'center',
+              marginInline: 'auto',
+              fontSize: 'clamp(20px, 2.6vw, 32px)',
+              marginBottom: '14px',
+            }}
+          >
+            Analisis 6 Komponen Sistem Informasi pada Ekosistem Shopee
+          </h2>
+        </Reveal>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(280px, 330px) 1fr',
+            gap: 16,
+            alignItems: 'stretch',
+          }}
+        >
+          {/* Sisi Kiri: Foto Slide Kuliah & Catatan Dosen */}
+          <div
+            style={{
+              ...card,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '14px',
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  marginBottom: 10,
+                }}
+              >
+                <span
+                  style={{
+                    background: 'var(--primary)',
+                    color: '#fff',
+                    fontSize: 10,
+                    fontWeight: 700,
+                    padding: '2px 8px',
+                    borderRadius: 4,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Rujukan Teori
+                </span>
+                <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--fg)' }}>
+                  Slide Perkuliahan Dosen
+                </span>
+              </div>
+
+              <div
+                style={{
+                  position: 'relative',
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid var(--hair)',
+                  background: '#0b0f19',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                }}
+              >
+                <img
+                  src={`${BASE}images/enam_komponen_si.jpeg`}
+                  alt="Enam Komponen Sistem Informasi Perkuliahan"
+                  style={{
+                    width: '100%',
+                    height: '210px',
+                    objectFit: 'contain',
+                    display: 'block',
+                    background: '#000',
+                  }}
+                />
+              </div>
+
+              <p
+                style={{
+                  fontSize: 11,
+                  color: 'var(--fg-muted)',
+                  marginTop: 8,
+                  lineHeight: 1.4,
+                  textAlign: 'center',
+                }}
+              >
+                Dasar Teori Dosen: 6 Komponen Pembentuk Sistem Informasi
+              </p>
+            </div>
+
+            <div
+              style={{
+                marginTop: 10,
+                padding: '10px 12px',
+                borderRadius: 'var(--radius-sm)',
+                background: 'rgba(238, 77, 45, 0.1)',
+                border: '1px solid rgba(238, 77, 45, 0.25)',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: 'var(--primary)',
+                  marginBottom: 4,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 4,
+                }}
+              >
+                💡 Catatan Kunci Dosen:
+              </div>
+              <div
+                style={{
+                  fontSize: 11.5,
+                  color: 'var(--fg)',
+                  fontStyle: 'italic',
+                  lineHeight: 1.45,
+                }}
+              >
+                "Manusia sering menentukan berhasil atau tidaknya SI: Sistem sebagus apa pun gagal jika tidak dipakai."
+              </div>
+            </div>
+          </div>
+
+          {/* Sisi Kanan: Tabel Langsung Disesuaikan dengan Shopee */}
+          <div style={{ ...tableContainer, marginTop: 0 }}>
+            <table style={tableStyle}>
+              <thead>
+                <tr>
+                  <th style={{ ...thStyle, width: '22%' }}>Komponen SI</th>
+                  <th style={{ ...thStyle, width: '42%' }}>Penerapan Konkret pada Shopee</th>
+                  <th style={{ ...thStyle, width: '36%' }}>Peran & Fungsi dalam Ekosistem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={tdBold}>🖥️ 1. Perangkat Keras<br /><span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontWeight: 400 }}>(Hardware)</span></td>
+                  <td style={tdStyle}>• Cloud Server AWS & Tencent (ribuan node)<br />• Smartphone pengguna (iOS/Android)<br />• Handheld Scanner PDA & thermal printer SPX</td>
+                  <td style={tdStyle}>Menopang komputasi jutaan request/detik, interaksi antarmuka belanja, dan sorting paket di gudang.</td>
+                </tr>
+                <tr>
+                  <td style={tdBold}>💾 2. Perangkat Lunak<br /><span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontWeight: 400 }}>(Software)</span></td>
+                  <td style={tdStyle}>• Aplikasi Mobile Shopee & Web Seller Centre<br />• Backend Microservices (Go & Java)<br />• Database TiDB & distributed caching Redis</td>
+                  <td style={tdStyle}>Mengeksekusi logika bisnis checkout, flash sale, promosi algoritma, serta query data super cepat (&lt;100ms).</td>
+                </tr>
+                <tr>
+                  <td style={tdBold}>📊 3. Data</td>
+                  <td style={tdStyle}>• Master katalog SKU barang & harga<br />• Data transaksi order & escrow lock<br />• Titik GPS kurir & histori scoring SPayLater</td>
+                  <td style={tdStyle}>Single Source of Truth untuk sinkronisasi stok toko riil, pelacakan live paket, dan analisa kredit OJK.</td>
+                </tr>
+                <tr>
+                  <td style={tdBold}>🌐 4. Jaringan<br /><span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontWeight: 400 }}>(Network)</span></td>
+                  <td style={tdStyle}>• Koneksi internet seluler 4G/5G pengguna<br />• CDN Cloudflare & proteksi Anti-DDoS<br />• API Gateway secure antar-microservices</td>
+                  <td style={tdStyle}>Menghubungkan jutaan user ke sistem, mempercepat loading aset gambar, serta integrasi bank/mitra.</td>
+                </tr>
+                <tr>
+                  <td style={tdBold}>📋 5. Prosedur<br /><span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontWeight: 400 }}>(Procedure)</span></td>
+                  <td style={tdStyle}>• SOP Garansi Shopee (rekening bersama escrow)<br />• SLA batas kirim seller (maks. 2 hari)<br />• Prosedur KYC e-KTP & alur retur barang</td>
+                  <td style={tdStyle}>Menjamin keadilan transaksi, mengamankan dana pembeli hingga barang sampai, serta standardisasi layanan.</td>
+                </tr>
+                <tr>
+                  <td style={tdBold}>👥 6. Manusia<br /><span style={{ fontSize: '0.72rem', color: 'var(--fg-muted)', fontWeight: 400 }}>(People - Kunci)</span></td>
+                  <td style={tdStyle}>• Pembeli (Buyer) & Penjual (Merchant)<br />• Mitra Driver SPX Express & staf gudang<br />• Software Engineers, CS, & Data Scientists</td>
+                  <td style={tdStyle}><span style={{ color: '#10b981', fontWeight: 600 }}>Faktor Penentu:</span> Keberhasilan sistem bergantung pada adopsi pengguna, literasi keamanan, dan respon kurir.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Slide>
+
+      {/* ─────────────────────────────────────────────────────────────
+          SLIDE 6: TABEL 2 (A) - 6 PRINSIP PERANCANGAN SI (PRINSIP 1 - 3)
           ───────────────────────────────────────────────────────────── */}
       <Slide
         nav="Tabel 2: Prinsip 1-3"
